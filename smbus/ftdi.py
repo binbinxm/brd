@@ -13,7 +13,7 @@ from pyftdi.i2c import I2cController, I2cNackError
 
 i2c = I2cController()
 i2c.configure('ftdi:///')
-slave = i2c.get_port(0x15)
+slave = i2c.get_port(0x30)
 
 #test demo 设置RST_PERST_MCU_L的引脚为高电平
 slave.write(b'\x21\x01\x01')

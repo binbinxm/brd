@@ -44,7 +44,7 @@ def main():
         args.offset = int(args.offset, base=16)
 
         value = read_one_byte(args.device, args.addr, args.offset)
-        print('register address = 0x%02x,  read value = 0x%02x'%(args.offset, value))
+        print('register address = 0x%02x,  read value = 0x%04x'%(args.offset, value))
 
     else:
         args.addr = int(args.addr, base=16)
@@ -52,7 +52,7 @@ def main():
         args.data = int(args.data, base=16)
 
         write_one_byte(args.device, args.addr, args.offset, args.data)
-        print('register address = 0x%02x, write value = 0x%02x'%(args.offset, args.data))
+        print('register address = 0x%02x, write value = 0x%04x'%(args.offset, args.data))
 
 def read_one_byte(url, addr, offset):
     i2c = I2cController()
